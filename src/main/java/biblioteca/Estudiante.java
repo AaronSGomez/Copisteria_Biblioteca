@@ -16,7 +16,7 @@ public class Estudiante implements Runnable {
 
         while (true) {
             String fotocopia = "Estudiante " + id;
-            System.out.println("Estudiante " + id + "solicitando maquina");
+            System.out.println("Estudiante " + id + " solicitando maquina");
             centroCopias.usarFotocopiadora(fotocopia);
             contadorCopias++;
 

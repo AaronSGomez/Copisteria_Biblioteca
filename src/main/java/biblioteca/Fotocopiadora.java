@@ -16,7 +16,7 @@ public class Fotocopiadora implements Runnable{
         while (true){
             String pedido = centroCopias.liberarFotocopiadora();
             try {
-                System.out.println(pedido + "usa maquina "+id);
+                System.out.println(pedido + "usa maquina " +id);
                 Thread.sleep((int)(Math.random()*4000));
 
                 System.out.println("Estudiante "+id+" ha terminado y libera maquina ");

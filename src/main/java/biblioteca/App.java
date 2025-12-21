@@ -8,6 +8,7 @@ public class App {
     public static void main(String[] args) {
         CentroCopias centroCopias = new CentroCopias();
 
+        // TODO : debo poner a dormir el main 20 segundos, ejecutar el programa y los hilos, y luego implementar abierto y cerrado de la copisteria
         for (int i = 0; i < 5; i++) {
             Estudiante estudiante = new Estudiante(i, centroCopias);
             Thread thread = new Thread(estudiante);

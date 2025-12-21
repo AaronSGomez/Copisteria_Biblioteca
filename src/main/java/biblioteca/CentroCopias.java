@@ -19,13 +19,13 @@ public class CentroCopias {
             }
         }
         fotocopias.add(copia);
-        System.out.println("Fotocopiadora usandose "+copia+" | Fotocopiadoras "+fotocopias.size());
+        System.out.println(copia +" imprimiendo");
         notifyAll();
     }
 
     public synchronized String liberarFotocopiadora() {
         while(fotocopias.isEmpty()) {
-            //System.out.println("Fotocopiadora libre.");
+            System.out.println("Fotocopiadora libre.");
             try {
                 wait();
             } catch (InterruptedException e) {
