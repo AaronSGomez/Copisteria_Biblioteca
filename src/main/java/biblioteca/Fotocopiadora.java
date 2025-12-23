@@ -13,13 +13,19 @@ public class Fotocopiadora implements Runnable{
     @Override
     public void run() {
 
-        while (true){
+        while (centroCopias.centroCopiasAbierto()){
             String pedido = centroCopias.liberarFotocopiadora();
-            try {
-                System.out.println(pedido + "usa maquina " +id);
-                Thread.sleep((int)(Math.random()*4000));
 
-                System.out.println("Estudiante "+id+" ha terminado y libera maquina ");
+            if (pedido == null) {
+                System.out.println("Fotocopiadora " + id + ": No hay más trabajos, apagando.");
+                break;
+            }
+
+            try {
+                System.out.println(pedido + " usa maquina " +id);
+                Thread.sleep((int)(Math.random()*2000));
+
+                System.out.println(pedido+" ha terminado y libera maquina ");
 
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
