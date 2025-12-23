@@ -16,6 +16,7 @@ public class Fotocopiadora implements Runnable{
         while (centroCopias.centroCopiasAbierto()){
             String pedido = centroCopias.liberarFotocopiadora();
 
+            // PASA A VECES QUE AL CERRAR EL CENTROCOPIAS EL POLL RETORNA NULL, TRATAMOS AQUI
             if (pedido == null) {
                 System.out.println("Fotocopiadora " + id + ": No hay más trabajos, apagando.");
                 break;

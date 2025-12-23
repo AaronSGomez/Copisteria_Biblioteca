@@ -4,7 +4,7 @@ public class Estudiante implements Runnable {
 
     private  CentroCopias centroCopias;
     private int id;
-    private int contadorCopias;
+    private int contadorCopias; // LUEGO SE SOLICITA CON GET
 
     public Estudiante(int id, CentroCopias centroCopias) {
         this.id = id;

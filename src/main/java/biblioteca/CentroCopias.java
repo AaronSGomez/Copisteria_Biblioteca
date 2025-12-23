@@ -11,7 +11,7 @@ public class CentroCopias {
     private boolean abierto = true;
 
     public synchronized void usarFotocopiadora(String copia) {
-
+    // AQUI SOLO HACEMOS WHILE SI LA COLA ESTA LLENA Y EL CENTRO ABIERTO
         while(fotocopias.size() == CAPACIDAD_MAX && abierto) {
             System.out.println("Fotocopiadora en uso. Estudiante esperado....");
             try {
@@ -47,6 +47,7 @@ public class CentroCopias {
         return abierto;
     }
 
+// DEBO NOTIFICAR A TODOS LOS QUE ESPERAN COPIA QUE ESTA CERRADO, no puedo hacer notifyAll() sin synchronized
     public synchronized void centroCopiasCerrado(){
         this.abierto = false;
         notifyAll();
